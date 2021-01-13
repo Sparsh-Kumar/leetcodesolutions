@@ -17,10 +17,10 @@ let twoSum = (nums, target) => {
     let hash = {};
     for (let index = 0;index < nums.length;index++) {
         let findNumber = target - nums [index];
-        if (hash [findNumber]) {
-            return [hash [findNumber] - 1, index]
+        if (hash [findNumber] || hash [findNumber] === 0) {
+            return [hash [findNumber], index]
         } else {
-            hash [nums [index]] = index + 1;
+            hash [nums [index]] = index;
         }
     }
 }
